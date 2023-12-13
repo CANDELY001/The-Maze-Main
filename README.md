@@ -1,7 +1,7 @@
 # Maze project
 
 ## Background Context
-
+![maze gif](https://user-images.githubusercontent.com/88714347/171422634-8adc8811-2559-4ba1-967f-4caf909c3f22.gif)
 The goal of this project is to create a game in 3D using raycasting!
 
 You don’t have to do the tasks in order, except for the first one (obviously), or if a task depends on a previous one.
