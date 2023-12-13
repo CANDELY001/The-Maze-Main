@@ -1,5 +1,31 @@
 #include "../headers/header.h"
+player_t player;
+/**
+ * display_player - function to display the player
+ * @instance: the given sdl2 instance
+ *
+ * Return: nothing
+ **/
+void display_player(SDL_Instance instance)
+{
+	/** variables for the intial & finall coordiantes & for SDL_rect **/
+	SDL_Rect rect;
+	float x0, y0, x1, y1;
 
+	/** convert the player postion into map scale **/
+	rect.x = player.x * MAP_SCALE, rect.y = player.y * MAP_SCALE;
+	rect.w = player.w * MAP_SCALE, rect.h = player.w * MAP_SCALE;
+	/** draw the rectangle of the player **/
+	SDL_SetRenderDrawColor(instance.ren, 255, 255, 0, 0);
+	SDL_RenderFillRect(instance.ren, &rect);
+
+	/** draw the line sight of the player **/
+	x0 = player.x * MAP_SCALE;
+	y0 = player.y * MAP_SCALE;
+	x1 = (player.x + player.dx * 20) * MAP_SCALE;
+	y1 = (player.y + player.dy * 20) * MAP_SCALE;
+	SDL_RenderDrawLine(instance.ren, x0, y0, x1, y1);
+}
 /**
  * drawRect - draw a rectangle
  * @x: x coordinate

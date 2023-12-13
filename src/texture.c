@@ -10,7 +10,7 @@ static const char *textureFileNames[NUM_TEXTURES] = {
 	"./images/wood.png",
 	"./images/eagle.png",
 };
-
+texture_t wallTextures[NUM_TEXTURES];
 /**
  * WallTexturesready - load textures in the respective position
  *

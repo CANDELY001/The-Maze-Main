@@ -2,6 +2,16 @@
 #define HEADER_H
 
 #include <SDL2/SDL.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <SDL2/SDL_image.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <math.h>
+#include <time.h>
 #include <stdint.h>
 #include <math.h>
 #include <limits.h>
@@ -37,6 +47,8 @@
 #define NUM_TEXTURES 8
 
 typedef uint32_t color_t;
+#define gun_scale 0.35
+#define num_enemy 5
 
 /* Process Input */
 void handleInput(void);
