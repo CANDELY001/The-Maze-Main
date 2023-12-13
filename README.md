@@ -108,7 +108,7 @@ where `MAP` is the name of the file found in the maps folder. You can create oth
 
 ## Authors
 
-- CANDELY001 (https://CAANDELY001@github.com)
+- CANDELY001 (https://CANDELY001@github.com)
 - BENRKIA Fatima Zahrae (https://Fati1909@github.com)
 
 **_Have fun!_**
