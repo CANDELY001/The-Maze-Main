@@ -92,6 +92,20 @@ extern player_t player;
 void movePlayer(float DeltaTime);
 void renderPlayer(void);
 
+/**
+ * struct enemy_s - structure for the enemy
+ * @x: the x coordinate postion
+ * @y: the y coordinate position
+ * @z: the z coordinate
+ * @path: the given path of the image
+ **/
+typedef struct enemy_s
+{
+	float x, y, z;
+	char *path;
+} enemy_t;
+
+extern enemy_t enemy;
 /* Functions-variables-structs for ray */
 
 /**
@@ -146,7 +160,7 @@ typedef struct texture_s
 	upng_t *upngTexture;
 } texture_t;
 
-texture_t wallTextures[NUM_TEXTURES];
+extern texture_t wallTextures[NUM_TEXTURES];
 
 void WallTexturesready(void);
 void freeWallTextures(void);
