@@ -1,31 +1,35 @@
 #include "../headers/header.h"
 player_t player;
 /**
- * display_player - function to display the player
- * @instance: the given sdl2 instance
+ * display_player - Function to display the player on the screen.
+ * @instance: The given SDL2 instance.
  *
- * Return: nothing
- **/
+ * This function renders the player's rectangle and line of sight.
+ */
 void display_player(SDL_Instance instance)
 {
-	/** variables for the intial & finall coordiantes & for SDL_rect **/
-	SDL_Rect rect;
-	float x0, y0, x1, y1;
+    /** Variables for the initial & final coordinates and SDL_Rect. */
+    SDL_Rect rect;
+    float x0, y0, x1, y1;
 
-	/** convert the player postion into map scale **/
-	rect.x = player.x * MAP_SCALE, rect.y = player.y * MAP_SCALE;
-	rect.w = player.w * MAP_SCALE, rect.h = player.w * MAP_SCALE;
-	/** draw the rectangle of the player **/
-	SDL_SetRenderDrawColor(instance.ren, 255, 255, 0, 0);
-	SDL_RenderFillRect(instance.ren, &rect);
+    /** Convert the player position into map scale. */
+    rect.x = player.x * MAP_SCALE;
+    rect.y = player.y * MAP_SCALE;
+    rect.w = player.w * MAP_SCALE;
+    rect.h = player.w * MAP_SCALE;
 
-	/** draw the line sight of the player **/
-	x0 = player.x * MAP_SCALE;
-	y0 = player.y * MAP_SCALE;
-	x1 = (player.x + player.dx * 20) * MAP_SCALE;
-	y1 = (player.y + player.dy * 20) * MAP_SCALE;
-	SDL_RenderDrawLine(instance.ren, x0, y0, x1, y1);
+    /** Draw the rectangle of the player. */
+    SDL_SetRenderDrawColor(instance.ren, 255, 255, 0, 0);
+    SDL_RenderFillRect(instance.ren, &rect);
+
+    /** Draw the line of sight of the player. */
+    x0 = player.x * MAP_SCALE;
+    y0 = player.y * MAP_SCALE;
+    x1 = (player.x + player.dx * 20) * MAP_SCALE;
+    y1 = (player.y + player.dy * 20) * MAP_SCALE;
+    SDL_RenderDrawLine(instance.ren, x0, y0, x1, y1);
 }
+
 /**
  * drawRect - draw a rectangle
  * @x: x coordinate

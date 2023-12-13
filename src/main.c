@@ -74,7 +74,18 @@ void destroy_game(void)
 	freeWallTextures();
 	destroyWindow();
 }
-
+/**
+ * display - function to display the game
+ * @instance: the given sdl2 instance
+ *
+ * Return: nothing
+ **/
+void display(SDL_Instance instance)
+{
+	add_enemy(instance);
+	display_player(instance);
+	add_weapon(instance);
+}
 /**
  * main - main function
  * Return: 0
@@ -82,14 +93,17 @@ void destroy_game(void)
 
 int main(void)
 {
+	SDL_Instance instance;
 	GameRunning = initializeWindow();
 
 	setup_game();
-
+    if (init_instance(&instance) != 0)
+		return (1);
 	while (GameRunning)
 	{
 		handleInput();
 		update_game();
+		display(instance);
 		render_game();
 	}
 	destroy_game();

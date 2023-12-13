@@ -49,6 +49,7 @@
 typedef uint32_t color_t;
 #define gun_scale 0.35
 #define num_enemy 5
+#define MAP_SCALE 10
 
 /* Process Input */
 void handleInput(void);
